@@ -1,6 +1,6 @@
 # Lab 26 — Hooks API
 
-- In this lab, you will be creating a ToDo application, utilizing functional components and the Hooks API
+- In this lab, I will be creating a ToDo application, utilizing functional components and the Hooks API
 
 ## Application Overview
 
