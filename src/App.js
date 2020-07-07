@@ -1,17 +1,16 @@
 import React from "react";
 import ToDo from "./components/ToDo";
-import Footer from "./components/Footer";
-import "./styles/styles.scss";
+import "./styles/styles.sass";
 
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <ToDo />
-        <Footer />
-      </React.Fragment>
-    );
-  }
+function App() {
+  return (
+    <div className="App">
+      <header>
+        <h1>Thomas's ToDo App</h1>
+      </header>
+      <ToDo />
+    </div>
+  );
 }
 
 export default App;
