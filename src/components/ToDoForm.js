@@ -1,32 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-function ToDoForm(props) {
-  const [description, setDescription] = useState(props.description || "");
-  const [assignee, setAssignee] = useState(props.assignee || "");
-  const [status, setStatus] = useState(props.status || "incomplete");
-  const [difficulty, setDifficulty] = useState(props.difficulty || 0);
+import useForm from "../hooks/useForm";
 
-  function formSubmit() {
-    props.addTask({
-      description,
-      assignee,
-      status,
-      difficulty,
-    });
-  }
+function ToDoForm(props) {
+  const [update, submit, data] = useForm(props.addTask);
 
   return (
-    <Form>
+    <Form onSubmit={submit}>
       <Form.Group controlId="todo-description">
         <Form.Label>Task Description</Form.Label>
         <Form.Control
           as="textarea"
           rows="3"
-          value={description}
           onChange={(e) => {
-            setDescription(e.target.value);
+            update("text", e.target.value);
           }}
         />
       </Form.Group>
@@ -35,22 +24,20 @@ function ToDoForm(props) {
         <Form.Control
           type="text"
           placeholder="Enter name"
-          value={assignee}
           onChange={(e) => {
-            setAssignee(e.target.value);
+            update("assignee", e.target.value);
           }}
         />
       </Form.Group>
       <Form.Group controlId="todo-status">
         <Form.Label>Status</Form.Label>
         <Form.Check
-          value={status === "complete"}
-          onChange={() => {
-            setStatus(status === "complete" ? "incomplete" : "complete");
+          onChange={(e) => {
+            update("status", e.target.checked);
           }}
           type="switch"
           id="status-switch"
-          label={status}
+          label={data.status ? "complete" : "incomplete"}
         />
       </Form.Group>
       <Form.Group controlId="todo-difficulty">
@@ -60,14 +47,13 @@ function ToDoForm(props) {
           min={0}
           max={5}
           step={1}
-          value={difficulty}
           onChange={(e) => {
-            setDifficulty(e.target.value);
+            update("difficulty", e.target.value);
           }}
         />
       </Form.Group>
 
-      <Button variant="primary" type="button" onClick={formSubmit}>
+      <Button variant="primary" type="submit">
         Add Task
       </Button>
     </Form>
