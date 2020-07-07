@@ -1,7 +1,7 @@
 # Lab 26 — Hooks API
 
 - [Pull Riquest](https://github.com/Thomas720/todo-list/pull/3)
-- [Deplaoyed Version](https://zealous-euclid-fc06c1.netlify.app/)
+- [Deployed Version](https://zealous-euclid-fc06c1.netlify.app/)
 
 * In this lab, I will be creating a ToDo application, utilizing functional components and the Hooks API
 
