@@ -1,7 +1,7 @@
 # Lab 27 --- Custom Hooks
 
-- [Pull Riquest]()
-- [Deployed Version]()
+- [Pull Riquest](https://github.com/Thomas720/todo-list/pull/4)
+- [Deployed Version](https://thirsty-neumann-848542.netlify.app/)
 
 * In this lab, I will be extending your ToDo application, utilizing a remote API and custom hooks.
 
