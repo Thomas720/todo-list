@@ -1,4 +1,4 @@
-# Lab 27 --- Custom Hooks
+# ToDo - Custom Hooks
 
 - [Pull Riquest](https://github.com/Thomas720/todo-list/pull/4)
 - [Deployed Version](https://thirsty-neumann-848542.netlify.app/)
